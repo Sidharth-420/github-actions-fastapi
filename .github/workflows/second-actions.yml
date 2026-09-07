@@ -26,6 +26,6 @@ jobs:
           pip install fastapi "uvicorn[standard]"
 
       - name: Verify the FastAPI application
-        run: |
-          python -m py_compile main.py
-          python -c "from main import app; assert app.title"
+  run: |
+    python -m py_compile app/main.py
+    python -c "from app.main import app; assert app.title"
