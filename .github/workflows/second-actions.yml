@@ -7,6 +7,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         python-version: ["3.10", "3.11"]
@@ -26,6 +27,6 @@ jobs:
           pip install fastapi "uvicorn[standard]"
 
       - name: Verify the FastAPI application
-  run: |
-    python -m py_compile app/main.py
-    python -c "from app.main import app; assert app.title"
+        run: |
+          python -m py_compile app/main.py
+          python -c "from app.main import app; assert app.title"
